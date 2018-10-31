@@ -24,7 +24,7 @@
   <link href='https://fonts.googleapis.com/css?family=Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
 
   <script type="text/javascript">
 
@@ -58,7 +58,7 @@
 
     var temperatures = [blisteringlyHot, boilingHot, chilled, cool, frosted, frozen, hot, iceCold, iced, lukeWarm, pipingHot, roomTemperature, scaldingHot, slushy, steamed, steaming, tepid, toasty, tongueNumbinglyCold, warm];
 
-    this.temperatures = temperatures[Math.round(Math.random()*19)]; 
+    this.temperatures = temperatures[Math.round(Math.random()*temperatures.length)]; 
 
     function Gimmick(name, multiplier) {
 
@@ -70,16 +70,24 @@
     var artesian = new Gimmick("artesian", 1);
     var blended = new Gimmick("blended", 2);
     var calming = new Gimmick("calming", .75);
+    var coldBrewed = new Gimmick("cold-brewed", .5);
     var decaf = new Gimmick("decaf", 1);
     var diet = new Gimmick("diet", 0.5);
+    var diuretic = new Gimmick("diuretic", .25);
     var double = new Gimmick("double", 2);
+    var automaticDrip = new Gimmick("automatic-drip", .25);
+    var frenchPressed = new Gimmick("French-pressed", .75);
+    var frothed = new Gimmick("frothed", .5);
     var halfCaf = new Gimmick("half-caf", 0.5);
+    var handChurned = new Gimmick("hand-churned", .5);
     var handCrafted = new Gimmick("hand-crafted", 2);
     var handPressed = new Gimmick("hand-pressed", 1);
     var lite = new Gimmick("lite", 0.5);
     var megaSized = new Gimmick("mega-sized", 3);
+    var probiotic = new Gimmick("probiotic", .25);
     var proteinPacked = new Gimmick("protein-packed", .5);
     var raw = new Gimmick("raw", 1.5);
+    var salted = new Gimmick("salted", .5);
     var single = new Gimmick("single", 1);
     var singleServing = new Gimmick("single-serving", 1);
     var skinny = new Gimmick("skinny", .5);
@@ -94,9 +102,9 @@
     var whipped = new Gimmick("whipped", 1);
     var zeroCal = new Gimmick("zero-cal", .5);
 
-    var gimmicks = [antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
+    var gimmicks = [diuretic, automaticDrip, frenchPressed, handChurned, frothed, probiotic, salted, antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
 
-    this.gimmicks = gimmicks[Math.round(Math.random()*26)];
+    this.gimmicks = gimmicks[Math.round(Math.random()*gimmicks.length)];
 
     function Infusion(name, color, taste) {
 
@@ -120,6 +128,7 @@
     var hazelnut = new Infusion("hazelnut", "#AA8855", 5);
     var hotSauce = new Infusion("hot sauce", "#FF3333", 5);
     var lemon = new Infusion("lemon", "#FFFF00", 5);
+    var lime = new Infusion("lime", "#330033", 5);
     var macha = new Infusion("macha", "#CCFF99", 8);
     var maple = new Infusion("maple", "#CC9900", 8);
     var nutmeg = new Infusion("nutmeg", "#CC6600", 4);
@@ -131,9 +140,9 @@
     var spinach = new Infusion("spinach", "#005500", 3);
     var wheatGrass = new Infusion("wheat grass", "#00CC00", 2);
 
-    var infusions = [almond, bacon, birthdayCake, butterscotch, caramel, carrot, chai, chile, cinnamon, cucumber, donut, habanero, hazelnut, hotSauce, lemon, macha, maple, nutmeg, poppingCandy, plum, roseHip, rosePetal, spinach, vanilla, wheatGrass];
+    var infusions = [lime, almond, bacon, birthdayCake, butterscotch, caramel, carrot, chai, chile, cinnamon, cucumber, donut, habanero, hazelnut, hotSauce, lemon, macha, maple, nutmeg, poppingCandy, plum, roseHip, rosePetal, spinach, vanilla, wheatGrass];
 
-    this.infusions =  infusions[Math.round(Math.random()*24)];
+    this.infusions =  infusions[Math.round(Math.random()*infusions.length)];
 
     function Flavor(name, color, taste) {
 
@@ -151,6 +160,7 @@
     var cola = new Flavor("cola", "#663300", 5);
     var cranberry = new Flavor("cranberry", "#990033", 6);
     var eggNog = new Flavor("egg nog", "#FFFF99", 9);
+    var elderflower = new Flavor("elderberry", "#FFCC66", 4);
     var guanabana = new Flavor("guanabana", "EEEEEE", 7);
     var grape = new Flavor("grape", "#990099", 9);
     var grapefruit = new Flavor("grapefruit", "#FF9999", 5);
@@ -159,18 +169,20 @@
     var lemonLime = new Flavor("lemon-lime", "#FFFFFF", 7);
     var mango = new Flavor("mango", "#FFFF66", 8);
     var mint = new Flavor("mint","#99FFCC", 5);
-    var mocha = new Flavor ("mocha", "#996633", 8);
+    var mocha = new Flavor("mocha", "#996633", 8);
     var orange = new Flavor("orange", "#FF9933", 6);
     var papaya = new Flavor("papaya", "#FF6666", 7);
+    var peach = new Flavor("peach", "#FF9966", 9);
     var peppermintMocha = new Flavor("peppermint mocha", "#996633", 9);
     var pineapple = new Flavor("pineapple", "#FFFF55", 8);
+    var pumpkinSpice = new Flavor("pumpkin spice", "#CC6600", 5);
     var strawberry = new Flavor("strawberry","#FF3333", 7);
     var tamarind = new Flavor("tamarind", "#663333", 7);
     var watermelon = new Flavor("watermelon", "#FF99CC", 8);
 
-    var flavors = [apple, banana, birch, chai, chocolate, coconut, cola, cranberry, eggNog, guanabana, grape, grapefruit, greenTea, honeyRoastedPeanut, lemonLime, mango, mint, mocha, orange, papaya, peppermintMocha, pineapple, strawberry, tamarind, watermelon]; 
+    var flavors = [elderflower, peach, apple, banana, birch, chai, chocolate, coconut, cola, cranberry, eggNog, guanabana, grape, grapefruit, greenTea, honeyRoastedPeanut, lemonLime, mango, mint, mocha, orange, papaya, peppermintMocha, pineapple, strawberry, tamarind, watermelon]; 
 
-    this.flavors = flavors[Math.round(Math.random()*24)];
+    this.flavors = flavors[Math.round(Math.random()*flavors.length)];
 
     function Type(name, color, taste) {
 
@@ -179,25 +191,39 @@
       this.taste=taste;
     }
 
+    var almondMilk = new Type("almond milk", "#FFFFFF", 5);
     var bubbleTea = new Type("bubble drink", "#FFFFFF", 5);
     var coffee = new Type("coffee", "#552200", 4);
+    var drinkingVinegar = new Type("drinking vinegar", "#FFFFFF", 4);
     var float = new Type("float", "#FFFFFF", 8);
     var iceCreamSoda = new Type("ice cream soda", "#FFFFCC", 7);
     var juice = new Type("juice", "#FFFFFF", 5);
-    var kombucha = new Type("kombucha", "CCCC00" ,7;)
+    var kefir = new Type("kefir", "#CC6633", 4);
+    var kombucha = new Type("kombucha", "CCCC00", 7);
     var malt = new Type("malt", "FFFFCC", 6);
+    var mate = new Type("mate", "#CC6600", 3);
     var milk = new Type("milk", "#FFFFFF", 6);
     var milkshake = new Type("milkshake", "#FFFFDD", 8);
+    var mineralWater = new Type("mineral water", "#FFFFFF", 5);
+    var mocktail = new Type("mocktail", "#FF6666", 7);
+    var nectar = new Type("nectar", "#FFCC33", 9);
+    var oatMilk = new Type("oat milk", "#FFFFFF", 5);
+    var punch = new Type("punch", "#FF3333", 9);
+    var riceMilk = new Type("rice milk", "#FFFFFF", 5);
     var seltzer = new Type("seltzer", "#FFFFFF", 5);
+    var slush = new Type("slush", "#CCCCFF", 8);
+    var smoothie = new Type("smoothie", "#FFFFCC", 8);
     var soda = new Type("soda", "#FFFFFF", 5);
+    var soyMilk = new Type("soy milk", "#FFFFFF", 5);
     var sparklingMineralWater = new Type("sparkling mineral water", "#FFFFFF", 5);
     var tea = new Type("tea", "#663300", 5);
     var tonicWater = new Type("tonic water", "#FFFFFF", 2);
     var water = new Type("water", "#FFFFFF", 5);
+    var yogurtDrink = new Type("yogurt drink", "#FFFFFF", 7);
 
-    var types = [bubbleTea, coffee, float, iceCreamSoda, juice, malt, milk, milkshake, seltzer, soda, sparklingMineralWater, tea, tonicWater, water];
+    var types = [almondMilk, drinkingVinegar, kefir, kombucha, mocktail, nectar, oatMilk, punch, riceMilk, slush, smoothie, soyMilk, yogurtDrink, bubbleTea, coffee, float, iceCreamSoda, juice, malt, milk, milkshake, seltzer, soda, sparklingMineralWater, tea, tonicWater, water];
 
-    this.types = types[Math.round(Math.random()*13)];
+    this.types = types[Math.round(Math.random()*types.length)];
 
     this.getTemperaturesName=this.temperatures.name;
     this.getGimmicksName=this.gimmicks.name;
