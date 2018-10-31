@@ -70,11 +70,15 @@
     var artesian = new Gimmick("artesian", 1);
     var blended = new Gimmick("blended", 2);
     var calming = new Gimmick("calming", .75);
+    var cloudy = new Gimmick("cloudy", .75);
     var coldBrewed = new Gimmick("cold-brewed", .5);
     var decaf = new Gimmick("decaf", 1);
     var diet = new Gimmick("diet", 0.5);
     var double = new Gimmick("double", 2);
+    var evaporated = new Gimmick("evaporated", 1);
     var automaticDrip = new Gimmick("automatic-drip", .25);
+    var filtered = new Gimmick("filtered", 1);
+    var unfiltered = new Gimmick("unfiltered", 1);
     var frenchPressed = new Gimmick("French-pressed", .75);
     var frothed = new Gimmick("frothed", .5);
     var halfCaf = new Gimmick("half-caf", 0.5);
@@ -92,6 +96,7 @@
     var skinny = new Gimmick("skinny", .5);
     var spiced = new Gimmick("spiced", 1);
     var smoked = new Gimmick("smoked", .25);
+    var sprouted = new Gimmick("sprouted", .5);
     var sweetened = new Gimmick("sweetened", 1);
     var thunderGulp = new Gimmick("thunder gulp", 4);
     var triple = new Gimmick("triple", 3);
@@ -101,7 +106,7 @@
     var whipped = new Gimmick("whipped", 1);
     var zeroCal = new Gimmick("zero-cal", .5);
 
-    var gimmicks = [automaticDrip, frenchPressed, handChurned, frothed, probiotic, salted, antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
+    var gimmicks = [cloudy, evaporated, sprouted, filtered, unfiltered, automaticDrip, frenchPressed, handChurned, frothed, probiotic, salted, antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
 
     this.gimmicks = gimmicks[Math.round(Math.random()*gimmicks.length)];
 
@@ -193,6 +198,8 @@
     var almondMilk = new Type("almond milk", "#FFFFFF", 5);
     var bubbleTea = new Type("bubble drink", "#FFFFFF", 5);
     var coffee = new Type("coffee", "#552200", 4);
+    var condensate = new Type("condensate", "#FFFFFF", 5);
+    var distillate = new Type("distillate", "#FFFFFF", 5);
     var drinkingVinegar = new Type("drinking vinegar", "#FFFFFF", 4);
     var float = new Type("float", "#FFFFFF", 8);
     var iceCreamSoda = new Type("ice cream soda", "#FFFFCC", 7);
@@ -220,7 +227,7 @@
     var water = new Type("water", "#FFFFFF", 5);
     var yogurtDrink = new Type("yogurt drink", "#FFFFFF", 7);
 
-    var types = [almondMilk, drinkingVinegar, kefir, kombucha, mocktail, nectar, oatMilk, punch, riceMilk, slush, smoothie, soyMilk, yogurtDrink, bubbleTea, coffee, float, iceCreamSoda, juice, malt, milk, milkshake, seltzer, soda, sparklingMineralWater, tea, tonicWater, water];
+    var types = [distillate, condensate, almondMilk, drinkingVinegar, kefir, kombucha, mocktail, nectar, oatMilk, punch, riceMilk, slush, smoothie, soyMilk, yogurtDrink, bubbleTea, coffee, float, iceCreamSoda, juice, malt, milk, milkshake, seltzer, soda, sparklingMineralWater, tea, tonicWater, water];
 
     this.types = types[Math.round(Math.random()*types.length)];
 
