@@ -73,7 +73,6 @@
     var coldBrewed = new Gimmick("cold-brewed", .5);
     var decaf = new Gimmick("decaf", 1);
     var diet = new Gimmick("diet", 0.5);
-    var diuretic = new Gimmick("diuretic", .25);
     var double = new Gimmick("double", 2);
     var automaticDrip = new Gimmick("automatic-drip", .25);
     var frenchPressed = new Gimmick("French-pressed", .75);
@@ -102,7 +101,7 @@
     var whipped = new Gimmick("whipped", 1);
     var zeroCal = new Gimmick("zero-cal", .5);
 
-    var gimmicks = [diuretic, automaticDrip, frenchPressed, handChurned, frothed, probiotic, salted, antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
+    var gimmicks = [automaticDrip, frenchPressed, handChurned, frothed, probiotic, salted, antioxidant, artesian, blended, calming, decaf, diet, double, halfCaf, handCrafted, handPressed, lite, megaSized, proteinPacked, raw, single, singleServing, skinny, smoked, spiced, sweetened, thunderGulp, triple, twentyFiveHourEnergy, unsweetened, vitaminEnriched, whipped, zeroCal];
 
     this.gimmicks = gimmicks[Math.round(Math.random()*gimmicks.length)];
 
